@@ -1,5 +1,8 @@
 # Dockerfile - this is a comment. Delete me if you want.
-FROM python:2.7
+FROM python:3.7.9
+
+# We copy just the requirements.txt first to leverage Docker cache
+COPY ./requirements.txt /app/requirements.txt
 
 COPY . /app
 

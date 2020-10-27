@@ -8,7 +8,7 @@ VALUES
 
 INSERT INTO "public"."lms"("created_at","updated_at","id","name","description","url","token","version")
 VALUES
--- (E'2020-02-28 22:52:24.485502',E'2020-04-20 00:04:45.217821',1,E'moodle',E'Moodle',E'http://localhost:8080',E'laisdjvna032309',E'3.8.0'),
+(E'2020-02-28 22:52:24.485502',E'2020-04-20 00:04:45.217821',1,E'moodle',E'Moodle',E'http://localhost:8080',E'laisdjvna032309',E'3.8.0'),
 (E'2020-02-28 22:54:20.104673',E'2020-02-28 22:54:20.104673',2,E'chamilo',E'Chamilo',NULL,NULL,NULL),
 (E'2020-02-28 22:54:48.524908',E'2020-02-28 22:54:48.524908',3,E'open_edx',E'Open EDX',NULL,NULL,NULL),
 (E'2020-02-28 22:55:14.631368',E'2020-02-28 22:55:14.631368',4,E'totara_learn',E'Totara Learn',NULL,NULL,NULL);
