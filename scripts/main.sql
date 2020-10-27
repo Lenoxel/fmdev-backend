@@ -153,4 +153,8 @@ CREATE TABLE moodle (
 
 /* O arquivo abaixo é pego do drive do grupo de pesquisa: Base de Dados - (Completa) Análise de Desempenho.csv */
 
-COPY moodle FROM 'C:\basefmdev.csv' DELIMITER ';' CSV HEADER;
+-- SERVER-SIDE CSV:
+COPY moodle FROM 'C:\basefmdevReduced.csv' DELIMITER ';' CSV HEADER;
+
+-- CLIENT-SIDE CSV (e.g. pgadmin, because AWS RDS does not allow super grant permission to user to COPY on pgadmin):
+\copy moodle FROM 'C:\basefmdevReduced.csv' delimiter ';' csv;
