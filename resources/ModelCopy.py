@@ -7,6 +7,7 @@ from flask_restful import Resource
 from flask import request, current_app
 from flask_jwt_extended import jwt_required
 from resources.TrainModel import TrainModelResource
+import urllib.request
 
 
 class ModelCopy(Resource):
@@ -14,7 +15,12 @@ class ModelCopy(Resource):
     def get_curl_template(self, key, data):
         model = TrainModelResource.get_by_id(key)
 
-        template = f"""curl --location --request POST '{current_app.config.get('BASE_URL')}/api/predict/{key}' \
+        current_public_ip = urllib.request.urlopen("http://169.254.169.254/latest/meta-data/public-ipv4").read()
+
+        print(current_public_ip)
+        print(type(current_public_ip))
+
+        template = f"""curl --location --request POST '{current_public_ip}/api/predict/{key}' \
                         --header 'Fmdev-Api-Key: {model.api_key}' \
                         --header 'Accept: application/json, text/plain, */*' \
                         --header 'Content-Type: application/json;charset=UTF-8' \
